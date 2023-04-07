@@ -5,6 +5,8 @@ use v_async::run as run_async;
 mod v_std;
 use v_std::run as run_std;
 
+const addr: &str = "127.0.0.1:8080";
+
 fn main() {
     run_std(1);
 }

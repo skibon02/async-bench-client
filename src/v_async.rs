@@ -11,7 +11,7 @@ type Result<T> = std::result::Result<T, Box<dyn std::error::Error + Send + Sync>
 #[allow(unreachable_code)]
 async fn run_sender() -> Result<()> {
 
-    let mut stream = TcpStream::connect("127.0.0.1:8080").await?;
+    let mut stream = TcpStream::connect(crate::addr).await?;
     
     let mut time_points = Box::new([Instant::now(); 100000]); // max is i32_max
     let mut time_elapsed = vec![];

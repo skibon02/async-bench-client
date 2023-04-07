@@ -7,7 +7,7 @@ use std::time::Instant;
 
 fn run_sender() {
 
-    let mut stream = TcpStream::connect("127.0.0.1:8080").unwrap();
+    let mut stream = TcpStream::connect(crate::addr).unwrap();
     
     let mut time_points = Box::new([Instant::now(); 100000]); // max is i32_max
     let mut time_elapsed = vec![];
